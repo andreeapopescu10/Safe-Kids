@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Hope Kids Center",
+    "city": "Bucharest",
+    "latitude": 44.4268,
+    "longitude": 26.1025,
+    "website": "https://hopekids.ro"
+  },
+  {
+    "name": "Bright Future Home",
+    "city": "Cluj-Napoca",
+    "latitude": 46.7712,
+    "longitude": 23.6236,
+    "website": "https://brightfuture.org"
+  },
+  {
+    "name": "Children's Haven",
+    "city": "Timisoara",
+    "latitude": 45.7489,
+    "longitude": 21.2087,
+    "website": "https://childrenshaven.ro"
+  },
+  {
+    "name": "Little Stars Shelter",
+    "city": "Iasi",
+    "latitude": 47.1585,
+    "longitude": 27.6014,
+    "website": "https://littlestarsiasi.ro"
+  },
+  {
+    "name": "Sunshine Kids Foundation",
+    "city": "Constanta",
+    "latitude": 44.1733,
+    "longitude": 28.6383,
+    "website": "https://sunshinekidsconstanta.org"
+  }
+]
