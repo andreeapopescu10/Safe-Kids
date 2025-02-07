@@ -1,6 +1,6 @@
 console.log(data);
 // URL-ul către fișierul JSON de pe GitHub
-const API_URL = "https://raw.githubusercontent.com/andreeapopescu10/Safe-Kids/refs/heads/main/kids.json";
+const API_URL = "https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/andreeapopescu10/Safe-Kids/main/safe_kids_centers.json";
 
 // Funcție pentru a încărca datele și a le afisa
 const fetchCenters = async () => {
