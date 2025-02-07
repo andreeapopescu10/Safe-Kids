@@ -1,23 +1,31 @@
-console.log(data);
-// URL-ul către fișierul JSON de pe GitHub
 const API_URL = "https://cors-anywhere.herokuapp.com/https://raw.githubusercontent.com/andreeapopescu10/Safe-Kids/main/safe_kids_centers.json";
 
-// Funcție pentru a încărca datele și a le afisa
 const fetchCenters = async () => {
   try {
+    // Trimitem cererea și așteptăm răspunsul
     const response = await fetch(API_URL);
+
+    // Verificăm dacă răspunsul este ok
+    if (!response.ok) {
+      throw new Error("Nu s-a putut încărca fișierul JSON.");
+    }
+
+    // Încercăm să transformăm răspunsul într-un obiect JSON
     const data = await response.json();
-    
-    // Verifică datele în consolă pentru a te asigura că sunt corecte
-    console.log(data);  // Verifică în consola browserului
-    
+
+    // Verificăm dacă datele au fost corect preluate
+    if (!data || data.length === 0) {
+      throw new Error("Datele JSON sunt goale sau incorecte.");
+    }
+
+    // Dacă datele sunt corecte, le afișăm
     let output = "";
     data.forEach(center => {
       output += `
         <div>
-          <h3>${center.nume ? center.nume : "Name unknown"}</h3>
-          <p><strong>Adresa:</strong> ${center.adresa ? center.adresa : "Unknown Address"}</p>
-          <p><strong>Contact:</strong> ${center.contact ? center.contact : "Unknown Contact"}</p>
+          <h3>${center.nume ? center.nume : "Nume necunoscut"}</h3>
+          <p><strong>Adresa:</strong> ${center.adresa ? center.adresa : "Adresă necunoscută"}</p>
+          <p><strong>Contact:</strong> ${center.contact ? center.contact : "Contact necunoscut"}</p>
         </div>
       `;
     });
@@ -27,7 +35,7 @@ const fetchCenters = async () => {
 
   } catch (error) {
     console.error("Eroare la încărcarea datelor:", error);
-    alert("Error");
+    alert("Eroare la încărcarea centrelor: " + error.message);
   }
 };
 
