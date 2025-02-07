@@ -1,3 +1,4 @@
+console.log(data);
 // URL-ul către fișierul JSON de pe GitHub
 const API_URL = "https://raw.githubusercontent.com/andreeapopescu10/Safe-Kids/refs/heads/main/kids.json";
 
